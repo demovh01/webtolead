@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Get a Quote - Brighton Electronics Pvt. Ltd.</title>
@@ -30,7 +31,8 @@
     .form-section h2 {
       font-size: 28px;
       margin-bottom: 20px;
-      color: #004080; /* Brighton Electronics Blue */
+      color: #004080;
+      /* Brighton Electronics Blue */
     }
 
     .form-grid {
@@ -44,14 +46,6 @@
       grid-column: span 2;
     }
 
-    .form-grid input,
-    .form-grid textarea {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
 
     #product-section {
       background: #f9f9f9;
@@ -60,11 +54,7 @@
       border-radius: 6px;
     }
 
-    .product-row {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+
 
     .product-row input {
       flex: 1;
@@ -122,98 +112,226 @@
       font-size: 14px;
       line-height: 1.6;
     }
+
+    .product-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 25px;
+      margin-bottom: 12px;
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      align-items: center;
+    }
+
+    .product-row input,
+    .product-row select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .product-row .remove-btn {
+      background: none;
+      border: none;
+      color: red;
+      font-size: 20px;
+      cursor: pointer;
+      justify-self: end;
+    }
+
+    .form-grid input,
+    .form-grid textarea,
+    .form-grid select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #fff;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .form-grid select:focus,
+    .form-grid input:focus,
+    .form-grid textarea:focus {
+      border-color: #004080;
+      box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+    }
+
+    .form-grid select {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23004080' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 16px;
+      padding-right: 35px;
+      cursor: pointer;
+    }
   </style>
 </head>
+
 <body>
-
-<div class="container">
-  <div class="form-section">
-   <h2>💡 Brighton Electronics</h2>
-
+  <div class="container">
+    <div class="form-section">
+      <h2>💡 Brighton Electronics</h2>
       <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKZ000006jHtt"
-          method="POST" onsubmit="return prepareForm()">
-      <input type="hidden" name="oid" value="00DKZ000006jHtt">
-      <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html">
+        method="POST">
+        
+        <input type="hidden" name="oid" value="00DKZ000006jHtt">
+        <input type="hidden" name="retURL" value="#">
+        <input type="hidden" name="lead_source" value="Website" />
 
-      <input type="hidden" name="LeadSource" value="Website" />
+        <div class="form-grid">
 
-      <div class="form-grid">
-        <input type="text" name="first_name" placeholder="First Name*" required />
-        <input type="text" name="last_name" placeholder="Last Name*" required />
-        <input type="email" name="email" placeholder="Enter your email*" required />
-        <input type="tel" name="mobile" placeholder="Contact*" required />
-        <input type="text" name="company" id="company" placeholder="Organization*" required />
+          <input type="text" name="first_name" placeholder="First Name*" required />
+          <input type="text" name="last_name" placeholder="Last Name*" required />
+          <input type="email" name="email" placeholder="Enter your email*" required />
+          <input type="tel" name="mobile" placeholder="Contact Number*" required />
+          <input type="text" name="company" id="company" placeholder="Organization*" required />
 
-        <!-- Product section -->
-        <div id="product-section">
-            <strong>Add Products</strong>
+          <!-- Address fields -->
+          <input type="text" name="street" placeholder="Street*" required />
+          <input type="text" name="city" placeholder="City*" required />
+          <input type="text" name="state" placeholder="State*" required />
+          <input type="text" name="zip" placeholder="Zip / Postal Code*" required />
+          <input type="text" name="country" placeholder="Country*" required />
+
+          <!-- Order Type -->
+          <select id="orderType" name="00NKZ00000PLQKB" title="Order Type" required>
+            <option value="">-- Select Order Type --</option>
+            <option value="One-Time">One-Time</option>
+            <option value="Custom">Custom</option>
+          </select>
+
+          <!-- Product Section -->
+          <div id="product-section" style="display:none; grid-column: span 2;">
+            <strong>Add Products</strong><br />
             <div id="product-list"></div>
             <button type="button" class="add-product" onclick="addProductRow()">+ Add Product</button>
+          </div>
+
+          <!-- Hidden field for combined products -->
+          <textarea name="00NKZ000008LQ7l" id="00NKZ000008LQ7l" style="display:none;"></textarea>
+
+          <!-- Agreement Fields for Custom -->
+          <div id="agreement-fields" style="display:none; grid-column: span 2;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div>
+                <label for="agreementStartPicker">Agreement Start Date:</label>
+                <input type="date" id="agreementStartPicker" placeholder="YYYY-MM-DD">
+                <!-- Hidden Salesforce field with correct ID -->
+                <input type="hidden" name="00NKZ00000PLQJw" id="agreementStartPickerHidden" />
+              </div>
+              <div>
+                <label for="agreementEndPicker">Agreement End Date:</label>
+                <input type="date" id="agreementEndPicker" placeholder="YYYY-MM-DD">
+                <!-- Hidden Salesforce field with correct ID -->
+                <input type="hidden" name="00NKZ00000PLQK1" id="agreementEndPickerHidden" />
+              </div>
+            </div>
+
+            <div style="margin-top: 10px;">
+              <label>Frequency:</label>
+              <select id="frequency" name="00NKZ00000PLQK6" title="Frequency" required>
+                <option value="">-- Select Frequency --</option>
+                <option value="Monthly">Monthly</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Quarterly">Quarterly</option>
+                <option value="Yearly">Yearly</option>
+              </select>
+            </div>
+          </div>
+
+          <textarea name="description" placeholder="Detailed requirement*" required></textarea>
+          <button type="submit" class="submit-button">Submit</button>
         </div>
+      </form>
+    </div>
 
-        <!-- Hidden field to store product names and quantities -->
-        <textarea name="00NKZ000008LQ7l" id="00NKZ000008LQ7l" style="display:none;"></textarea>
-
-        <textarea name="description" placeholder="Detailed requirement*"></textarea>
-      </div>
-
-      <button type="submit" class="submit-button">Submit</button>
-    </form>
+    <div class="contact-section">
+      <p><strong>💡 Brighton Electronics Pvt. Ltd.</strong><br>
+        Corporate Office: 456 Brightway, Tech Park,<br>
+        Mumbai - 400001, India<br><br>
+        📞 +91 22 1234 5678<br>
+        ✉️ sales@brightonelectronics.com
+      </p>
+    </div>
   </div>
-
-  <div class="contact-section">
-    <p><strong>💡 Brighton Electronics Pvt. Ltd.</strong><br>
-      Corporate Office: 456 Brightway, Tech Park,<br>
-      Mumbai - 400001, India<br><br>
-      📞 +91 22 1234 5678<br>
-      ✉️ sales@brightonelectronics.com</p>
-  </div>
-</div>
 
 <script>
-  function addProductRow(name = '', qty = '') {
-    const container = document.getElementById("product-list");
-    const row = document.createElement("div");
-    row.className = "product-row";
-    row.innerHTML = `
-      <input type="text" class="product-name" placeholder="Product Name" value="${name}" required />
-      <input type="number" class="product-qty" placeholder="Quantity" min="1" value="${qty}" required />
-      <button type="button" class="remove-btn" title="Remove">×</button>
-    `;
-    row.querySelector(".remove-btn").onclick = () => row.remove();
-    container.appendChild(row);
-  }
+const orderTypeField = document.getElementById("orderType");
+const productSection = document.getElementById("product-section");
+const agreementFields = document.getElementById("agreement-fields");
+const productList = document.getElementById("product-list");
 
-  function combineProducts() {
-    const names = document.querySelectorAll(".product-name");
-    const qtys = document.querySelectorAll(".product-qty");
-    let result = [];
+// Show/hide agreement & product sections
+orderTypeField.addEventListener("change", () => {
+  const orderType = orderTypeField.value;
+  productSection.style.display = orderType ? "block" : "none";
+  agreementFields.style.display = orderType === "Custom" ? "block" : "none";
+  productList.innerHTML = "";
+  if (orderType) addProductRow();
+});
 
-    for (let i = 0; i < names.length; i++) {
-      const name = names[i].value.trim();
-      const qty = qtys[i].value.trim();
-      if (name && qty) {
-        result.push(`${name} - ${qty}`);
-      }
-    }
+function addProductRow(data = {}) {
+  const row = document.createElement("div");
+  row.className = "product-row";
+  row.innerHTML = `
+    <input type="text" class="product-name" placeholder="Product Name" value="${data.name || ''}" required />
+    <input type="number" class="product-qty" placeholder="Quantity" min="1" value="${data.qty || ''}" required />
+    <button type="button" class="remove-btn" title="Remove">×</button>
+  `;
+  row.querySelector(".remove-btn").onclick = () => row.remove();
+  productList.appendChild(row);
+}
 
-    document.getElementById("00NKZ000008LQ7l").value = result.join("\n");
-  }
+function combineProducts() {
+  const rows = document.querySelectorAll(".product-row");
+  const result = [];
+  rows.forEach(row => {
+    const name = row.querySelector(".product-name")?.value || '';
+    const qty = row.querySelector(".product-qty")?.value || '';
+    result.push(`Product: ${name}, Qty: ${qty}`);
+  });
+  document.getElementById("00NKZ000008LQ7l").value = result.join("\n");
+}
 
-  function prepareForm() {
-    combineProducts();
+document.querySelector('form').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    const companyField = document.getElementById("company");
-    if (!companyField.value.trim()) {
-      companyField.value = "Brighton Electronics Customer";
-    }
+  combineProducts();
 
-    return true;
-  }
+  const startPicker = document.getElementById('agreementStartPicker');
+  const endPicker = document.getElementById('agreementEndPicker');
+  const startHidden = document.querySelector('[name="00NKZ00000PLQJw"]');
+  const endHidden = document.querySelector('[name="00NKZ00000PLQK1"]');
 
-  // Load default 2 product rows
-  for (let i = 0; i < 2; i++) addProductRow();
+  function formatDateForSalesforce(isoDate) {
+  if (!isoDate) return '';
+  const [yyyy, mm, dd] = isoDate.split('-');
+  return `${mm}/${dd}/${yyyy}`;
+}
+
+startHidden.value = formatDateForSalesforce(startPicker.value);
+endHidden.value = formatDateForSalesforce(endPicker.value);
+
+console.log('✅ Agreement Start Date (hidden):', startHidden.value);
+console.log('✅ Agreement End Date (hidden):', endHidden.value);
+
+
+  e.target.submit();
+});
+
 </script>
-
 </body>
+
+
 </html>
