@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECO Waste Management - Enquiry Form</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 40px;
+  }
+  .form-container {
+    max-width: 900px;
+    background: #fff;
+    margin: auto;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 180px;
+  }
+  h2 {
+    text-align: center;
+    color: #004d40;
+    margin-bottom: 30px;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .form-group {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group.full {
+    flex: 1 1 100%;
+  }
+  label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  input, select, textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  select[multiple] {
+    height: 120px;
+  }
+  input[type="submit"] {
+    background-color: #00897b;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  input[type="submit"]:hover {
+    background-color: #00695c;
+  }
+  @media (max-width: 700px) {
+    .form-group {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+    </head>
+    <body>
+    <div class="form-container">
+        <img src="https://www.eco.com.sg/resources/front/template/eco/images/logo.png" alt="ECO Logo" class="logo">
+        <h2>Request a Waste Management Service</h2>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DNS00000eNScc" method="POST">
+
+    <input type="hidden" name="oid" value="00DNS00000eNScc">
+    <input type="hidden" name="retURL" value="https://www.eco.com.sg/">
+    <input type="hidden" name="lead_source" value="Website">
+    <input type="hidden" name="status" value="New">
+
+    <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input id="first_name" maxlength="40" name="first_name" type="text" required>
+    </div>
+
+    <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input id="last_name" maxlength="80" name="last_name" type="text" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" maxlength="80" name="email" type="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input id="phone" maxlength="40" name="phone" type="tel" required>
+    </div>
+
+    <div class="form-group">
+        <label for="company">Company Name</label>
+        <input id="company" maxlength="40" name="company" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input id="address" maxlength="255" name="address" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jg7i6">Service Location</label>
+        <select id="00NNS00002jg7i6" name="00NNS00002jg7i6" required>
+        <option value="">-- Select Region --</option>
+        <option value="North Region">North Region</option>
+        <option value="South Region">South Region</option>
+        <option value="East Region">East Region</option>
+        <option value="West Region">West Region</option>
+        <option value="Central Region">Central Region</option>
+        <option value="Offshore / Island">Offshore / Island</option>
+        <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jgOB3">Type of Waste Service</label>
+        <select id="00NNS00002jgOB3" name="00NNS00002jgOB3" required>
+            <option value="">-- Select Type of Waste --</option>
+        <option value="Toxic Industrial Waste (TIW)">Toxic Industrial Waste (TIW)</option>
+        <option value="Industrial &amp; Commercial Waste (ICW)">Industrial & Commercial Waste (ICW)</option>
+        <option value="Bio-Hazardous Waste (BHW)">Bio-Hazardous Waste (BHW)</option>
+        <option value="Sludge Treatment (STP)">Sludge Treatment (STP)</option>
+        <option value="Destruction Services">Destruction Services</option>
+        <option value="Specialized Chemical Recovery">Specialized Chemical Recovery</option>
+        <option value="Integrated Waste Management (IWM)">Integrated Waste Management (IWM)</option>
+        <option value="Laboratory Testing Services">Laboratory Testing Services</option>
+        <option value="Other">Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jgOCf">Waste Category / Description</label>
+        <input id="00NNS00002jgOCf" maxlength="255" name="00NNS00002jgOCf" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jg1ny">Estimated Quantity / Volume</label>
+        <input id="00NNS00002jg1ny" maxlength="255" name="00NNS00002jg1ny" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jgONx">Service Frequency</label>
+        <select id="00NNS00002jgONx" name="00NNS00002jgONx">
+        <option value="">-- Select Frequency --</option>
+        <option value="One-Time">One-Time</option>
+        <option value="Weekly Service">Weekly Service</option>
+        <option value="Monthly Service">Monthly Service</option>
+        <option value="Quarterly Service">Quarterly Service</option>
+        <option value="Annual Service">Annual Service</option>
+        <option value="On-Call">On-Call</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jg8vu">Estimated Budget Range</label>
+        <input id="00NNS00002jg8vu" name="00NNS00002jg8vu" type="text">
+    </div>
+
+    <div class="form-group">
+        <label for="00NNS00002jgOcT">Pickup Location</label>
+        <input id="00NNS00002jgOcT" maxlength="255" name="00NNS00002jgOcT" type="text">
+    </div>
+
+    <!-- <div class="form-group">
+        <label for="00NNS00002jgOe5">Pickup Date</label>
+        <input id="00NNS00002jgOe5" name="00NNS00002jgOe5" type="date">
+    </div> -->
+
+    <div class="form-group full">
+        <label for="description">Message / Comments</label>
+        <textarea id="description" name="description" placeholder="Enter any special requirements or notes..."></textarea>
+    </div>
+
+    <div class="form-group full" style="text-align:center;">
+        <input type="submit" value="Submit Enquiry">
+    </div>
+
+    </form>
+
+    </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const pickupDate = document.getElementById("00NNS00002jgOe5");
+
+  form.addEventListener("submit", function() {
+    if (pickupDate && pickupDate.value) {
+      // ✅ Handle two cases:
+      // (1) Browser already sends YYYY-MM-DD (do nothing)
+      // (2) User typed DD/MM/YYYY manually — convert it
+      if (pickupDate.value.includes("/")) {
+        const parts = pickupDate.value.split("/");
+        if (parts.length === 3) {
+          const [day, month, year] = parts;
+          pickupDate.value = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+        }
+      }
+    }
+  });
+});
+</script>
+
+    </body>
+    </html>
