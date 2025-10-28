@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Submit a Case - Brighton Electronics Pvt. Ltd.</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .form-section {
+            flex: 2;
+            padding: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #004080;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-grid textarea,
+        .form-grid select {
+            grid-column: span 2;
+        }
+
+        .form-grid input,
+        .form-grid textarea,
+        .form-grid select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .form-grid select:focus,
+        .form-grid input:focus,
+        .form-grid textarea:focus {
+            border-color: #004080;
+            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+        }
+
+        .form-grid select {
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23004080' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 35px;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            background-color: #00264d;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            grid-column: span 2;
+        }
+
+        .submit-button:hover {
+            background-color: #003366;
+        }
+
+        .contact-section {
+            flex: 1;
+            background-color: #004080;
+            color: #fff;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-section p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>🧩 Submit a Case - Brighton Electronics</h2>
+
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DKZ000006jHtt"
+                method="POST">
+
+                <input type="hidden" name="orgid" value="00DKZ000006jHtt">
+                <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html">
+<input type="hidden" name="status" value="New">
+
+                <div class="form-grid">
+                    <input id="name" maxlength="80" name="name" type="text" placeholder="Contact Name*" required>
+                    <input id="email" maxlength="80" name="email" type="email" placeholder="Email*" required>
+                    <input id="phone" maxlength="40" name="phone" type="tel" placeholder="Phone*" required>
+                    <input id="subject" maxlength="80" name="subject" type="text" placeholder="Subject*" required>
+                    <input id="00NKZ00000PLzJs" maxlength="255" name="00NKZ00000PLzJs" type="text"
+                        placeholder="Order Number">
+
+                    <textarea name="description" placeholder="Describe your issue*" required></textarea>
+
+                    <select id="priority" name="priority" required>
+                        <option value="">-- Select Priority --</option>
+                        <option value="Critical">Critical</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+
+
+                    <button type="submit" class="submit-button">Submit Case</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-section">
+            <p><strong>💡 Brighton Electronics Pvt. Ltd.</strong><br>
+                Customer Support Center<br>
+                456 Brightway, Tech Park,<br>
+                Mumbai - 400001, India<br><br>
+                📞 +91 22 1234 5678<br>
+                ✉️ support@brightonelectronics.com
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
