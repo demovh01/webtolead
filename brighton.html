@@ -2,292 +2,318 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Get a Quote - Brighton Electronics Pvt. Ltd.</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8" />
+    <title>Get a Quote - Brighton Electronics Pvt. Ltd.</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      max-width: 1000px;
-      margin: 50px auto;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+        .container {
+            display: flex;
+            flex-direction: row;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-    .form-section {
-      flex: 2;
-      padding: 30px;
-    }
+        .form-section {
+            flex: 2;
+            padding: 30px;
+        }
 
-    .form-section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #004080;
-      /* Brighton Electronics Blue */
-    }
+        .form-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #004080;
+            /* Brighton Electronics Blue */
+        }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-    .form-grid textarea,
-    #product-section {
-      grid-column: span 2;
-    }
-
-
-    #product-section {
-      background: #f9f9f9;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
+        .form-grid textarea,
+        #product-section {
+            grid-column: span 2;
+        }
 
 
+        #product-section {
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
 
-    .product-row input {
-      flex: 1;
-    }
 
-    .remove-btn {
-      background: none;
-      border: none;
-      color: red;
-      font-size: 20px;
-      cursor: pointer;
-    }
 
-    .add-product {
-      background-color: #004080;
-      color: white;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+        .product-row input {
+            flex: 1;
+        }
 
-    .submit-button {
-      margin-top: 20px;
-      background-color: #00264d;
-      color: #fff;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+        .remove-btn {
+            background: none;
+            border: none;
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+        }
 
-    .submit-button:hover {
-      background-color: #003366;
-    }
+        .add-product {
+            background-color: #004080;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
 
-    .contact-section {
-      flex: 1;
-      background-color: #004080;
-      color: #fff;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+        .submit-button {
+            margin-top: 20px;
+            background-color: #00264d;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-    .contact-section img {
-      max-width: 120px;
-      margin-bottom: 20px;
-    }
+        .submit-button:hover {
+            background-color: #003366;
+        }
 
-    .contact-section p {
-      font-size: 14px;
-      line-height: 1.6;
-    }
+        .contact-section {
+            flex: 1;
+            background-color: #004080;
+            color: #fff;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-    .product-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr auto;
-      gap: 25px;
-      margin-bottom: 12px;
-      background: #fff;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      align-items: center;
-    }
+        .contact-section img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
 
-    .product-row input,
-    .product-row select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 15px;
-    }
+        .contact-section p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
-    .product-row .remove-btn {
-      background: none;
-      border: none;
-      color: red;
-      font-size: 20px;
-      cursor: pointer;
-      justify-self: end;
-    }
+        .product-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 25px;
+            margin-bottom: 12px;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            align-items: center;
+        }
 
-    .form-grid input,
-    .form-grid textarea,
-    .form-grid select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: #fff;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      outline: none;
-      box-sizing: border-box;
-      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    }
+        .product-row input,
+        .product-row select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+        }
 
-    .form-grid select:focus,
-    .form-grid input:focus,
-    .form-grid textarea:focus {
-      border-color: #004080;
-      box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
-    }
+        .product-row .remove-btn {
+            background: none;
+            border: none;
+            color: red;
+            font-size: 20px;
+            cursor: pointer;
+            justify-self: end;
+        }
 
-    .form-grid select {
-      background-image: url("data:image/svg+xml;utf8,<svg fill='%23004080' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 10px center;
-      background-size: 16px;
-      padding-right: 35px;
-      cursor: pointer;
-    }
-  </style>
+        .form-grid input,
+        .form-grid textarea,
+        .form-grid select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .form-grid select:focus,
+        .form-grid input:focus,
+        .form-grid textarea:focus {
+            border-color: #004080;
+            box-shadow: 0 0 4px rgba(0, 64, 128, 0.3);
+        }
+
+        .form-grid select {
+            background-image: url("data:image/svg+xml;utf8,<svg fill='%23004080' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+            padding-right: 35px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="form-section">
-      <h2>💡 Brighton Electronics</h2>
-      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKZ000006jHtt"
-        method="POST">
+    <div class="container">
+        <div class="form-section">
+            <h2>💡 Brighton Electronics</h2>
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKZ000006jHtt"
+                method="POST">
 
-        <input type="hidden" name="oid" value="00DKZ000006jHtt">
-        <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html">
-        <input type="hidden" name="lead_source" value="Website" />
+                <input type="hidden" name="oid" value="00DKZ000006jHtt">
+                <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html">
+                <input type="hidden" name="lead_source" value="Website" />
 
-        <div class="form-grid">
-          <input type="text" name="first_name" placeholder="First Name*" required />
-          <input type="text" name="last_name" placeholder="Last Name*" required />
-          <input type="email" name="email" placeholder="Enter your email*" required />
-          <input type="tel" name="mobile" placeholder="Contact Number*" required />
-          <input type="text" name="company" id="company" placeholder="Organization*" required />
+                <div class="form-grid">
+                    <input type="text" name="first_name" placeholder="First Name*" required />
+                    <input type="text" name="last_name" placeholder="Last Name*" required />
+                    <input type="email" name="email" placeholder="Enter your email*" required />
+                    <input type="tel" name="mobile" placeholder="Contact Number*" required />
+                    <input type="text" name="company" id="company" placeholder="Organization*" required />
 
-          <!-- Address fields -->
-          <input type="text" name="street" placeholder="Street*" required />
-          <input type="text" name="city" placeholder="City*" required />
-          <input type="text" name="state" placeholder="State*" required />
-          <input type="text" name="zip" placeholder="Zip / Postal Code*" required />
-          <input type="text" name="country" placeholder="Country*" required />
+                    <!-- Address fields -->
 
-          <!-- Product Section -->
-          <div id="product-section" style="grid-column: span 2;">
-            <strong>Add Products</strong><br />
-            <div id="product-list"></div>
-            <button type="button" class="add-product" onclick="addProductRow()">+ Add Product</button>
-          </div>
 
-          <!-- Hidden field for combined products -->
-          <textarea name="00NKZ000008LQ7l" id="00NKZ000008LQ7l" style="display:none;"></textarea>
+                    <!-- Product Section -->
+                    <div id="product-section" style="grid-column: span 2;">
+                        <strong>Add Products</strong><br />
+                        <div id="product-list"></div>
+                        <button type="button" class="add-product" onclick="addProductRow()">+ Add Product</button>
+                    </div>
 
-          <!-- Frequency Fields -->
-          <div id="frequency-section" style="grid-column: span 2; margin-top: 10px;">
-            <label for="00NKZ00000PLQK6">Frequency:</label>
-            <select id="00NKZ00000PLQK6" name="00NKZ00000PLQK6" title="Frequency" required>
-              <option value="">-- Select Frequency --</option>
-              <option value="One-Time">One-Time</option>
-              <option value="Weekly">Weekly</option>
-              <option value="Monthly">Monthly</option>
-              <option value="Quarterly">Quarterly</option>
-              <option value="Yearly">Yearly</option>
-            </select>
-            <br><br>
-            <label id="orderFreqLabel" for="00NKZ00000PLQKB">Agreement</label>
-            <input id="00NKZ00000PLQKB" name="00NKZ00000PLQKB" size="20" type="number" min="1" required />
-          </div>
+                    <!-- Hidden field for combined products -->
+                    <textarea name="00NKZ000008LQ7l" id="00NKZ000008LQ7l" style="display:none;"></textarea>
 
-          <textarea name="description" placeholder="Detailed requirement*" required></textarea>
-          <button type="submit" class="submit-button">Submit</button>
-        </div>
-      </form>
+                  <!-- Frequency Fields -->
+<div id="frequency-section" style="grid-column: span 2; margin-top: 20px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 25px; align-items: flex-end;">
+    
+    <!-- Frequency Dropdown -->
+    <div style="flex: 1; min-width: 250px;">
+      <label for="00NKZ00000PLQK6" style="display:block; font-weight:600; margin-bottom:6px;">Frequency:</label>
+      <select id="00NKZ00000PLQK6" name="00NKZ00000PLQK6" title="Frequency" required
+              style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; font-size:16px;">
+        <option value="">-- Select Frequency --</option>
+        <option value="One-Time">One-Time</option>
+        <option value="Weekly">Weekly</option>
+        <option value="Monthly">Monthly</option>
+        <option value="Quarterly">Quarterly</option>
+        <option value="Yearly">Yearly</option>
+      </select>
     </div>
 
-    <div class="contact-section">
-      <p><strong>💡 Brighton Electronics Pvt. Ltd.</strong><br>
-        Corporate Office: 456 Brightway, Tech Park,<br>
-        Mumbai - 400001, India<br><br>
-        📞 +91 22 1234 5678<br>
-        ✉️ sales@brightonelectronics.com
-      </p>
+    <!-- Agreement Input -->
+    <div id="agreementDiv" style="flex: 1; min-width: 250px;">
+      <label id="orderFreqLabel" for="00NKZ00000PLQKB"
+             style="display:block; font-weight:600; margin-bottom:6px;">Agreement</label>
+      <input id="00NKZ00000PLQKB" name="00NKZ00000PLQKB" type="number" min="1" required
+             style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; font-size:16px;">
     </div>
+
   </div>
+</div>
 
-  <script>
-    function addProductRow(data = {}) {
-      const productList = document.getElementById("product-list");
-      const row = document.createElement("div");
-      row.className = "product-row";
-      row.innerHTML = `
+                    <input type="text" name="street" placeholder="Street*" required />
+                    <input type="text" name="city" placeholder="City*" required />
+                    <input type="text" name="state" placeholder="State*" required />
+                    <input type="text" name="zip" placeholder="Zip / Postal Code*" required />
+                    <input type="text" name="country" placeholder="Country*" required />
+                    <!-- <textarea name="description" placeholder="Detailed requirement*" required></textarea> -->
+                
+                </div>
+                    <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <div class="contact-section">
+            <p><strong>💡 Brighton Electronics Pvt. Ltd.</strong><br>
+                Corporate Office: 456 Brightway, Tech Park,<br>
+                Mumbai - 400001, India<br><br>
+                📞 +91 22 1234 5678<br>
+                ✉️ sales@brightonelectronics.com
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function addProductRow(data = {}) {
+            const productList = document.getElementById("product-list");
+            const row = document.createElement("div");
+            row.className = "product-row";
+            row.innerHTML = `
         <input type="text" class="product-name" placeholder="Product Name" value="${data.name || ''}" required />
         <input type="number" class="product-qty" placeholder="Quantity" min="1" value="${data.qty || ''}" required />
         <button type="button" class="remove-btn" title="Remove">×</button>
       `;
-      row.querySelector(".remove-btn").onclick = () => row.remove();
-      productList.appendChild(row);
-    }
+            row.querySelector(".remove-btn").onclick = () => row.remove();
+            productList.appendChild(row);
+        }
 
-    function combineProducts() {
-      const rows = document.querySelectorAll(".product-row");
-      const result = [];
-      rows.forEach(row => {
-        const name = row.querySelector(".product-name")?.value || '';
-        const qty = row.querySelector(".product-qty")?.value || '';
-        result.push(`Product: ${name}, Qty: ${qty}`);
-      });
-      document.getElementById("00NKZ000008LQ7l").value = result.join("\n");
-    }
+        function combineProducts() {
+            const rows = document.querySelectorAll(".product-row");
+            const result = [];
+            rows.forEach(row => {
+                const name = row.querySelector(".product-name")?.value || '';
+                const qty = row.querySelector(".product-qty")?.value || '';
+                result.push(`Product: ${name}, Qty: ${qty}`);
+            });
+            document.getElementById("00NKZ000008LQ7l").value = result.join("\n");
+        }
 
-    document.getElementById("00NKZ00000PLQK6").addEventListener("change", function () {
-      const label = document.getElementById("orderFreqLabel");
-      const map = {
-        "One-Time": "Agreement Days",
-        "Weekly": "Agreement Week",
-        "Monthly": "Agreement Month",
-        "Quarterly": "Agreement Quarter",
-        "Yearly": "Agreement Year"
-      };
-      label.textContent = map[this.value] || "Agreement";
-    });
+        document.getElementById("00NKZ00000PLQK6").addEventListener("change", function () {
+            const label = document.getElementById("orderFreqLabel");
+            const agreementDiv = document.getElementById("agreementDiv");
+            const map = {
+                "One-Time": "Agreement Days",
+                "Weekly": "Agreement Week",
+                "Monthly": "Agreement Month",
+                "Quarterly": "Agreement Quarter",
+                "Yearly": "Agreement Year"
+            };
+            label.textContent = map[this.value] || "Agreement";
+            if (this.value === "One-Time") {
+                agreementDiv.style.display = "none";
+                document.getElementById("00NKZ00000PLQKB").removeAttribute("required");
+            } else {
+                agreementDiv.style.display = "block";
+                document.getElementById("00NKZ00000PLQKB").setAttribute("required", true);
+            }
 
-    document.querySelector('form').addEventListener('submit', function (e) {
-      combineProducts();
-    });
+        });
 
-    // ✅ Show one product row by default on page load
-    window.onload = () => addProductRow();
-  </script>
+
+        document.querySelector('form').addEventListener('submit', function (e) {
+            combineProducts();
+        });
+
+        // ✅ Show one product row by default on page load
+        window.onload = () => addProductRow();
+    </script>
 </body>
 
 </html>
