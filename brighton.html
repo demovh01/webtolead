@@ -280,7 +280,7 @@
             rows.forEach(row => {
                 const name = row.querySelector(".product-name")?.value || '';
                 const qty = row.querySelector(".product-qty")?.value || '';
-                result.push(`Product: ${name}, Qty: ${qty}`);
+                result.push(`${name}, ${qty}`);
             });
             document.getElementById("00NKZ000008LQ7l").value = result.join("\n");
         }
