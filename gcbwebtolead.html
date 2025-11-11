@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCB Bank | Lead Form</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1d3b78;
+      --accent: #4a6cf7;
+      --border: #d3d8e8;
+      --bg: #f0f4ff;
+      --text-dark: #2c3e50;
+      --text-muted: #5a6779;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #e8eefc 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .lead-form-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 700px;
+      padding: 2.5rem 3rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bank-logo {
+      display: block;
+      margin: 0 auto 1.2rem;
+      width: 140px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      font-size: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--text-dark);
+      margin-top: 0.5rem;
+    }
+
+    .consent a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .consent a:hover {
+      text-decoration: underline;
+    }
+
+    .security-note {
+      font-size: 13px;
+      color: #6c757d;
+      margin-top: 10px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 108, 247, 0.25);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 13px;
+      color: #7a869a;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="lead-form-container">
+    <img src="https://www.ebank.gcbbankltd.com/images/common/logo.svg" alt="GCB Bank Logo" class="bank-logo" />
+    <h2>Open Your Journey with GCB Bank</h2>
+    <p class="subtitle">
+      Submit your details and our representative will get in touch for account opening, loans, or banking assistance.
+    </p>
+
+    <form
+      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKZ00000SC2jP"
+      method="POST"
+    >
+      <input type="hidden" name="oid" value="00DKZ00000SC2jP" />
+   <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html">
+      <input type="hidden" name="lead_source" value="Website" />
+
+      <div class="form-row">
+        <div>
+          <label for="first_name">First Name</label>
+          <input id="first_name" maxlength="40" name="first_name" type="text" required />
+        </div>
+        <div>
+          <label for="last_name">Last Name</label>
+          <input id="last_name" maxlength="80" name="last_name" type="text" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" maxlength="80" name="email" type="email" required />
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" maxlength="40" name="phone" type="text" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="company">Company</label>
+          <input id="company" maxlength="40" name="company" type="text" />
+        </div>
+        <div>
+          <label for="city">City</label>
+          <input id="city" maxlength="40" name="city" type="text" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="state">State / Province</label>
+          <input id="state" maxlength="20" name="state" type="text" />
+        </div>
+        <div>
+          <label for="zip">ZIP / Postal Code</label>
+          <input id="zip" maxlength="20" name="zip" type="text" />
+        </div>
+      </div>
+
+    <div class="form-row">
+  <div>
+    <label for="street">Street</label>
+<input id="street" name="street" type="text" />
+  </div>
+  <div>
+    <label for="country">Country</label>
+    <input id="country" maxlength="40" name="country" type="text" />
+  </div>
+</div>
+
+
+      <label for="00NKZ00000R7yf5">Interested In</label>
+      <select id="00NKZ00000R7yf5" name="00NKZ00000R7yf5" title="Interested In">
+        <option value="">-- Select --</option>
+        <option value="Savings Account">Savings Account</option>
+        <option value="Current Account">Current Account</option>
+        <option value="Fixed Deposit">Fixed Deposit</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Personal Loan">Personal Loan</option>
+        <option value="Home Loan">Home Loan</option>
+        <option value="Business Loan">Business Loan</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description"></textarea>
+
+      <label class="consent">
+        <input type="checkbox" required />
+        I agree to the
+        <a href="/privacy" target="_blank">Privacy Policy</a> and consent to be contacted by GCB Bank.
+      </label>
+
+      <p class="security-note">
+        🔒 Your information is secure and encrypted. We do not share your data with third parties.
+      </p>
+
+      <button type="submit" class="submit-btn">Submit Your Inquiry</button>
+    </form>
+
+    <div class="footer-note">© 2025 GCB Bank Ltd — Secure Online Submission</div>
+  </div>
+</body>
+</html>
