@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCB Bank | Customer Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1d3b78;
+      --accent: #4a6cf7;
+      --border: #d3d8e8;
+      --bg: #f0f4ff;
+      --text-dark: #2c3e50;
+      --text-muted: #5a6779;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #e8eefc 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .case-form-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 700px;
+      padding: 2.5rem 3rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.7s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bank-logo {
+      display: block;
+      margin: 0 auto 1.2rem;
+      width: 140px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      font-size: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(74, 108, 247, 0.25);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 13px;
+      color: #7a869a;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="case-form-container">
+    <img src="https://www.ebank.gcbbankltd.com/images/common/logo.svg" alt="GCB Bank Logo" class="bank-logo" />
+    <h2>Contact GCB Bank Support</h2>
+
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DKZ00000SC2jP" method="POST">
+      <input type="hidden" name="orgid" value="00DKZ00000SC2jP" />
+      <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html" />
+
+      <div class="form-row">
+        <div>
+          <label for="name">Contact Name</label>
+          <input id="name" maxlength="80" name="name" type="text" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" maxlength="80" name="email" type="email" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" maxlength="40" name="phone" type="text" />
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <input id="subject" maxlength="80" name="subject" type="text" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div>
+          <label for="priority">Priority</label>
+          <select id="priority" name="priority" required>
+            <option value="">-- Select Priority --</option>
+            <option value="Critical">Critical</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+        <div>
+          <label for="type">Case Type</label>
+          <select id="type" name="type" required>
+            <option value="">-- Select Type --</option>
+            <option value="Account Support">Account Support</option>
+            <option value="General">General</option>
+            <option value="Technical Issue">Technical Issue</option>
+            <option value="Account Issue">Account Issue</option>
+            <option value="Card Issue">Card Issue</option>
+            <option value="Transaction Dispute">Transaction Dispute</option>
+            <option value="Loan Enquiry">Loan Enquiry</option>
+            <option value="Online Banking Issue">Online Banking Issue</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" required placeholder="Please describe your issue..."></textarea>
+
+      <button type="submit" class="submit-btn">Submit Case</button>
+    </form>
+
+    <div class="footer-note">© 2025 GCB Bank Ltd — Secure Support Portal</div>
+  </div>
+</body>
+</html>
