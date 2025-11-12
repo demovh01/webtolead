@@ -139,8 +139,9 @@
     <img src="https://www.ebank.gcbbankltd.com/images/common/logo.svg" alt="GCB Bank Logo" class="bank-logo" />
     <h2>Contact GCB Bank Support</h2>
 
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DKZ00000SC2jP" method="POST">
-      <input type="hidden" name="orgid" value="00DKZ00000SC2jP" />
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DKj00000icBoI" method="POST">
+     <input type=hidden name='captcha_settings' value='{"keyname":"case","fallback":"true","orgId":"00DKj00000icBoI","ts":""}'>
+    <input type=hidden name="orgid" value="00DKj00000icBoI">
       <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html" />
 
       <div class="form-row">
@@ -180,15 +181,18 @@
           <label for="type">Case Type</label>
           <select id="type" name="type" required>
             <option value="">-- Select Type --</option>
-            <option value="Account Support">Account Support</option>
-            <option value="General">General</option>
-            <option value="Technical Issue">Technical Issue</option>
-            <option value="Account Issue">Account Issue</option>
-            <option value="Card Issue">Card Issue</option>
-            <option value="Transaction Dispute">Transaction Dispute</option>
-            <option value="Loan Enquiry">Loan Enquiry</option>
-            <option value="Online Banking Issue">Online Banking Issue</option>
-            <option value="Other">Other</option>
+<option value="Problem">Problem</option>
+<option value="Feature Request">Feature Request</option>
+<option value="Question">Question</option>
+<option value="Account Support">Account Support</option>
+<option value="General">General</option>
+<option value="Account Issue">Account Issue</option>
+<option value="Technical Issue">Technical Issue</option>
+<option value="Card Issue">Card Issue</option>
+<option value="Transaction Dispute">Transaction Dispute</option>
+<option value="Loan Enquiry">Loan Enquiry</option>
+<option value="Online Banking Issue">Online Banking Issue</option>
+<option value="Other">Other</option>
           </select>
         </div>
       </div>
