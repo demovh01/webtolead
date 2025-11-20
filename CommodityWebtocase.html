@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit a Case</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      max-width: 1000px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .form-section {
+      flex: 2;
+      padding: 30px;
+    }
+
+    .form-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-grid textarea {
+      grid-column: span 2;
+    }
+
+    .form-grid input,
+    .form-grid textarea,
+    .form-grid select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .submit-button {
+      margin-top: 20px;
+      background-color: #001f3f;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-button:hover {
+      background-color: #003366;
+    }
+
+    .contact-section {
+      flex: 1;
+      background-color: #002347;
+      color: #fff;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-section img {
+      max-width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .contact-section p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="form-section">
+      <img src="https://comquest.com.ph/wp-content/uploads/2021/12/comquest-logo.png"
+                alt="CommodityQuestInc Logo">
+    <h2>Submit a Case</h2>
+
+    <!-- 🔵 Web-to-Case Salesforce Form -->
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DKa00000W1WM4" 
+          method="POST">
+
+      <input type="hidden" name="orgid" value="00DKa00000W1WM4">
+      <input type="hidden" name="retURL" value="http://">
+      <input type="hidden" id="external" name="external" value="1">
+
+      <div class="form-grid">
+
+        <input type="text" id="name" name="name" maxlength="80" placeholder="Contact Name*" required>
+        <input type="email" id="email" name="email" maxlength="80" placeholder="Email*" required>
+
+        <input type="text" id="phone" name="phone" maxlength="40" placeholder="Phone">
+        <input type="text" id="subject" name="subject" maxlength="80" placeholder="Subject*" required>
+
+        <textarea id="description" name="description" placeholder="Describe your issue*" required></textarea>
+
+        <select id="priority" name="priority">
+          <option value="">Priority</option>
+          <option value="Critical">Critical</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+
+      </div>
+
+      <button type="submit" class="submit-button">Submit Case</button>
+    </form>
+  </div>
+
+  <div class="contact-section">
+            <img src="https://comquest.com.ph/wp-content/uploads/2021/12/comquest-logo.png"
+                alt="CommodityQuestInc Logo">
+            <p><strong>Commodity Quest Inc.</strong><br>
+                Unit 2406 Unionbank Plaza,<br>
+                Meralco Avenue corner Onyx Road,<br>
+                Ortigas Center, Pasig City 1605<br><br>
+                📞 +91 80 4072 3800<br>
+                ✉️ info@CommodityQuestInc.com</p>
+        </div>
+
+</div>
+
+</body>
+</html>
