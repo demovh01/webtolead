@@ -227,13 +227,16 @@
 <script>
   function populateCompany() {
     const firstName = document.getElementById('first_name').value || '';
-    const lastName  = document.getElementById('last_name').value || '';
-    document.getElementById('company').value =
-      (firstName + ' ' + lastName).trim();
+    
+    if (firstName.trim() !== '') {
+      document.getElementById('company').value =
+        'stu-' + firstName.trim().toLowerCase();
+    }
   }
 
-  document.getElementById('first_name').addEventListener('blur', populateCompany);
-  document.getElementById('last_name').addEventListener('blur', populateCompany);
+  document.getElementById('first_name')
+    .addEventListener('blur', populateCompany);
 </script>
+
 
 </html>
