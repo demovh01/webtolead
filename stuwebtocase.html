@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <title>STU â€“ Secure Case Intake</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #b11212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .stu-form {
+      width: 100%;
+      max-width: 460px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 36px 40px;
+      box-shadow: 0 18px 40px rgba(177, 18, 18, 0.08);
+      border: 1px solid #f2cccc;
+    }
+
+    .stu-form h2 {
+      text-align: center;
+      margin-bottom: 8px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .stu-form p {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 26px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px 12px;
+      margin-bottom: 18px;
+      border-radius: 8px;
+      border: 1px solid #e6b8b8;
+      font-size: 14px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #b11212;
+      box-shadow: 0 0 0 2px rgba(177, 18, 18, 0.1);
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .stu-form input[type="submit"] {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: 10px;
+      background: #b11212;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .stu-form input[type="submit"]:hover {
+      background: #8f0e0e;
+    }
+
+    .conf-note {
+      margin-top: 14px;
+      font-size: 11px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+
+  <!-- SUBJECT AUTO-GENERATION -->
+  <script>
+    function setSubject() {
+      var name = document.getElementById("name").value || "Anonymous";
+      var reason = document.getElementById("reason").value || "General";
+      document.getElementById("subject").value = name + "_" + reason;
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+
+<form class="stu-form"
+      action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00Dfj00000FoOOy"
+      method="POST"
+      onsubmit="return setSubject();">
+
+  <!-- REQUIRED HIDDEN FIELDS -->
+  <input type="hidden" name="orgid" value="00Dfj00000FoOOy">
+  <input type="hidden" name="retURL" value="https://stu.org.sg">
+  <input type="hidden" name="external" value="1">
+
+  <!-- HIDDEN DEFAULTS -->
+  <input type="hidden" name="priority" value="High">
+  <input type="hidden" id="subject" name="subject">
+
+  <h2>Inquiry Form</h2>
+  <p>Singapore Teachersâ€™ Union</p>
+
+  <!-- NAME -->
+  <label for="name">Name</label>
+  <input id="name" name="name" maxlength="80" type="text">
+
+  <!-- EMAIL -->
+  <label for="email">Email</label>
+  <input id="email" name="email" maxlength="80" type="text">
+
+  <!-- PHONE -->
+  <label for="phone">Phone</label>
+  <input id="phone" name="phone" maxlength="40" type="text">
+
+  <!-- INQUIRY REASON -->
+  <label for="reason">Inquiry Reason</label>
+  <select id="reason" name="reason">
+    <option value="">â€” Select â€”</option>
+    <option value="General Enquiry">General Enquiry</option>
+    <option value="Feedback">Feedback</option>
+    <option value="Employment Dispute">Employment Dispute</option>
+    <option value="Workplace Grievance">Workplace Grievance</option>
+    <option value="Disciplinary Matter">Disciplinary Matter</option>
+    <option value="Policy Clarification">Policy Clarification</option>
+    <option value="Pay &amp; Benefits Query">Pay &amp; Benefits Query</option>
+    <option value="Leave &amp; Entitlements">Leave &amp; Entitlements</option>
+    <option value="Workplace Harassment / Misconduct">Workplace Harassment / Misconduct</option>
+    <option value="Health &amp; Wellbeing Concern">Health &amp; Wellbeing Concern</option>
+    <option value="Professional Conduct Advice">Professional Conduct Advice</option>
+    <option value="Legal Consultation Request">Legal Consultation Request</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <!-- DESCRIPTION -->
+  <label for="description">Description</label>
+  <textarea name="description"></textarea>
+
+  <input type="submit" value="Submit Case">
+
+  <div class="conf-note">
+    All submissions are handled confidentially by authorised personnel only.
+  </div>
+
+</form>
+
+</body>
+</html>
