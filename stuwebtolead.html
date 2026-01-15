@@ -158,8 +158,12 @@
       <p>Please fill in your details and our team will get in touch with you.</p>
     </div>
 
-    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dfj00000FoOOy"
-          method="POST">
+<form
+  action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+  method="POST"
+  onsubmit="populateCompanyOnSubmit()"
+>
+
 
       <input type="hidden" name="oid" value="00Dfj00000FoOOy">
       <input type="hidden" name="retURL" value="https://demovh01.github.io/webtolead/thank-you.html">
@@ -176,7 +180,8 @@
 
         <div class="form-group">
           <label for="last_name">Last Name</label>
-          <input id="last_name" name="last_name" type="text" maxlength="80" />
+          <input id="last_name" name="last_name" type="text"   maxlength="80" required />
+
         </div>
 
         <div class="form-group">
@@ -244,18 +249,15 @@
 
 </body>
 <script>
-  function populateCompany() {
-    const firstName = document.getElementById('first_name').value || '';
-    
-    if (firstName.trim() !== '') {
-      document.getElementById('company').value =
-        'STU-' + firstName.trim().toLowerCase();
-    }
-  }
+  function populateCompanyOnSubmit() {
+    const firstName =
+      document.getElementById('first_name').value || 'Unknown';
 
-  document.getElementById('first_name')
-    .addEventListener('blur', populateCompany);
+    document.getElementById('company').value =
+      'STU-' + firstName.trim().toLowerCase();
+  }
 </script>
+
 
 
 </html>
