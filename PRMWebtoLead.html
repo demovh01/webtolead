@@ -87,6 +87,7 @@
     <!-- Hidden Business Logic -->
     <input type="hidden" name="lead_source" value="Website">
     <input type="hidden" name="rating" value="Hot">
+<input type="hidden" id="company" name="company" value="">
 
     <!-- Contact Details -->
     <div class="sf-field">
@@ -259,3 +260,20 @@
     }
   });
 </script>
+<script>
+  const firstNameInput = document.getElementById("first_name");
+  const companyInput = document.getElementById("company");
+
+  function updateCompanyName() {
+    const firstName = firstNameInput.value.trim();
+    if (firstName) {
+      companyInput.value = `${firstName} – ${brand} Enquiry`;
+    } else {
+      companyInput.value = "Website Enquiry";
+    }
+  }
+
+  firstNameInput.addEventListener("blur", updateCompanyName);
+  firstNameInput.addEventListener("keyup", updateCompanyName);
+</script>
+
