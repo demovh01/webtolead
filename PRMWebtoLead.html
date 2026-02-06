@@ -128,13 +128,13 @@
       </select>
     </div>
 
-    <div class="sf-field">
-      <label for="00NNS00002uhsez">Car Model</label>
-      <select id="00NNS00002uhsez" name="00NNS00002uhsez">
-        <option value="">Select Model</option>
-        <!-- Keep all your existing model options here (unchanged) -->
-      </select>
-    </div>
+  <div class="sf-field">
+  <label for="00NNS00002uhsez">Car Model</label>
+  <select id="00NNS00002uhsez" name="00NNS00002uhsez" disabled>
+    <option value="">Select Brand First</option>
+  </select>
+</div>
+
 
     <div class="sf-field">
       <label for="00NNS00002uhsiD">Budget Range</label>
@@ -185,3 +185,77 @@
 
   </form>
 </div>
+<script>
+  const brandSelect = document.getElementById("00NNS00002uhsGn");
+  const modelSelect = document.getElementById("00NNS00002uhsez");
+
+  const carModels = {
+    "Toyota": [
+      "Glanza","Urban Cruiser Taisor","Urban Cruiser Hyryder","Rumion",
+      "Innova Crysta","Innova Hycross","Fortuner","Fortuner Legender","Camry"
+    ],
+    "Honda": [
+      "Amaze","City","City Hybrid e:HEV","Elevate","WR-V (Used Market)"
+    ],
+    "Hyundai": [
+      "Grand i10 Nios","i20","i20 N Line","Aura","Exter","Venue","Venue N Line",
+      "Creta","Creta N Line","Alcazar","Tucson","Verna"
+    ],
+    "Kia": [
+      "Sonet","Seltos","Carens","Carnival"
+    ],
+    "Mazda": [
+      "Mazda2","Mazda3","Mazda6","CX-3","CX-30","CX-5","CX-8","CX-9",
+      "MX-5 (Miata)","BT-50 (Pickup)"
+    ],
+    "Nissan": [
+      "Magnite","Kicks","X-Trail","Qashqai","Juke",
+      "Terrano (Used Market)","Sunny (Used Market)","Micra (Used Market)",
+      "Leaf (EV)","Ariya (EV)"
+    ],
+    "BMW": [
+      "2 Series","3 Series","5 Series","X1","X3","X5"
+    ],
+    "Mercedes-Benz": [
+      "A-Class","C-Class","E-Class","GLA","GLC","GLE"
+    ],
+    "Audi": [
+      "A4","A6","Q3","Q5","Q7"
+    ],
+    "Volkswagen": [
+      "Virtus","Taigun","Tiguan","Polo","Vento","Ameo","Passat",
+      "Jetta","Tiguan Allspace","T-Roc"
+    ]
+  };
+
+  function resetModelSelect(message) {
+    modelSelect.innerHTML = `<option value="">${message}</option>`;
+    modelSelect.disabled = true;
+  }
+
+  brandSelect.addEventListener("change", function () {
+    const selectedBrand = this.value;
+
+    resetModelSelect("Select Model");
+
+    if (!selectedBrand) {
+      resetModelSelect("Select Brand First");
+      return;
+    }
+
+    modelSelect.disabled = false;
+
+    if (selectedBrand === "Not Sure") {
+      Object.values(carModels).flat().forEach(model => {
+        modelSelect.add(new Option(model, model));
+      });
+      return;
+    }
+
+    if (carModels[selectedBrand]) {
+      carModels[selectedBrand].forEach(model => {
+        modelSelect.add(new Option(model, model));
+      });
+    }
+  });
+</script>
