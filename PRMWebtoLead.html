@@ -262,18 +262,31 @@
 </script>
 <script>
   const firstNameInput = document.getElementById("first_name");
+  const brandSelectForCompany = document.getElementById("00NNS00002uhsGn");
   const companyInput = document.getElementById("company");
+  const form = document.querySelector("form");
 
   function updateCompanyName() {
     const firstName = firstNameInput.value.trim();
-    if (firstName) {
+    const brand = brandSelectForCompany.value;
+
+    if (firstName && brand) {
       companyInput.value = `${firstName} – ${brand} Enquiry`;
+    } else if (firstName) {
+      companyInput.value = `${firstName} – Website Enquiry`;
     } else {
       companyInput.value = "Website Enquiry";
     }
   }
 
-  firstNameInput.addEventListener("blur", updateCompanyName);
+  // Update dynamically
   firstNameInput.addEventListener("keyup", updateCompanyName);
+  brandSelectForCompany.addEventListener("change", updateCompanyName);
+
+  // FINAL GUARANTEE before submit
+  form.addEventListener("submit", function () {
+    updateCompanyName();
+  });
 </script>
+
 
