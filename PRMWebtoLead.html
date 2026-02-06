@@ -1,0 +1,187 @@
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+<style>
+  .sf-form-wrapper {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    font-family: Arial, sans-serif;
+  }
+
+  .sf-form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #111;
+  }
+
+  .sf-field {
+    margin-bottom: 18px;
+  }
+
+  .sf-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+  }
+
+  .sf-field input,
+  .sf-field select,
+  .sf-field textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+
+  .sf-field textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .sf-field input:focus,
+  .sf-field select:focus,
+  .sf-field textarea:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  .sf-submit-btn {
+    width: 100%;
+    background: #007bff;
+    color: #fff;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .sf-submit-btn:hover {
+    background: #0056b3;
+  }
+
+  @media (max-width: 600px) {
+    .sf-form-wrapper {
+      padding: 20px;
+    }
+  }
+</style>
+
+<div class="sf-form-wrapper">
+  <h2>Enquire Now</h2>
+
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DNS00000eNScc"
+        method="POST">
+
+    <!-- Salesforce Required -->
+    <input type="hidden" name="oid" value="00DNS00000eNScc">
+    <input type="hidden" name="retURL" value="https://www.premroymotoring.com/">
+
+    <!-- Hidden Business Logic -->
+    <input type="hidden" name="lead_source" value="Website">
+    <input type="hidden" name="rating" value="Hot">
+
+    <!-- Contact Details -->
+    <div class="sf-field">
+      <label for="first_name">First Name *</label>
+      <input id="first_name" name="first_name" maxlength="40" type="text" required>
+    </div>
+
+    <div class="sf-field">
+      <label for="last_name">Last Name *</label>
+      <input id="last_name" name="last_name" maxlength="80" type="text" required>
+    </div>
+
+    <div class="sf-field">
+      <label for="phone">Phone *</label>
+      <input id="phone" name="phone" maxlength="40" type="text" required>
+    </div>
+
+    <div class="sf-field">
+      <label for="email">Email *</label>
+      <input id="email" name="email" maxlength="80" type="email" required>
+    </div>
+
+    <!-- Car Details -->
+    <div class="sf-field">
+      <label for="00NNS00002uhsGn">Car Brand *</label>
+      <select id="00NNS00002uhsGn" name="00NNS00002uhsGn" required>
+        <option value="">Select Brand</option>
+        <option>Toyota</option>
+        <option>Honda</option>
+        <option>Hyundai</option>
+        <option>Kia</option>
+        <option>Mazda</option>
+        <option>Nissan</option>
+        <option>BMW</option>
+        <option>Mercedes-Benz</option>
+        <option>Audi</option>
+        <option>Volkswagen</option>
+        <option>Not Sure</option>
+      </select>
+    </div>
+
+    <div class="sf-field">
+      <label for="00NNS00002uhsez">Car Model</label>
+      <select id="00NNS00002uhsez" name="00NNS00002uhsez">
+        <option value="">Select Model</option>
+        <!-- Keep all your existing model options here (unchanged) -->
+      </select>
+    </div>
+
+    <div class="sf-field">
+      <label for="00NNS00002uhsiD">Budget Range</label>
+      <select id="00NNS00002uhsiD" name="00NNS00002uhsiD">
+        <option value="">Select Budget</option>
+        <option>Below ₹5 Lakhs</option>
+        <option>₹5 – ₹8 Lakhs</option>
+        <option>₹8 – ₹12 Lakhs</option>
+        <option>₹12 – ₹18 Lakhs</option>
+        <option>₹18 – ₹25 Lakhs</option>
+        <option>₹25 Lakhs+</option>
+        <option>Not Disclosed</option>
+      </select>
+    </div>
+
+    <div class="sf-field">
+      <label for="00NNS00002uht6P">Car Variant</label>
+      <select id="00NNS00002uht6P" name="00NNS00002uht6P">
+        <option value="">Select Variant</option>
+        <option>Base Model</option>
+        <option>Mid Variant</option>
+        <option>Top Variant</option>
+        <option>Automatic Variant</option>
+        <option>Special Edition</option>
+      </select>
+    </div>
+
+    <div class="sf-field">
+      <label for="00NNS00002uhitR">Enquiry Type *</label>
+      <select id="00NNS00002uhitR" name="00NNS00002uhitR" required>
+        <option value="">Select Enquiry Type</option>
+        <option>New Car Purchase</option>
+        <option>Used Car Purchase</option>
+        <option>Just Enquiring</option>
+        <option>Price Check Only</option>
+        <option>Looking to Compare Models</option>
+      </select>
+    </div>
+
+    <div class="sf-field">
+      <label for="description">Additional Requirements</label>
+      <textarea name="description" placeholder="Tell us what you're looking for..."></textarea>
+    </div>
+
+    <button type="submit" class="sf-submit-btn">
+      Submit Enquiry
+    </button>
+
+  </form>
+</div>
