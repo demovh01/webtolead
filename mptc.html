@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPTC Customer Complaint Form</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #003366, #00509d);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 950px;
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .header {
+      background: linear-gradient(90deg, #003366, #00509d);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .header p {
+      opacity: 0.9;
+      font-size: 15px;
+    }
+
+    .form-container {
+      padding: 35px;
+    }
+
+    .section-title {
+      margin-bottom: 20px;
+      color: #003366;
+      font-size: 22px;
+      font-weight: 700;
+      border-left: 5px solid #00509d;
+      padding-left: 12px;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 14px;
+      border: 1px solid #d6d6d6;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.3s ease;
+      background: #fafafa;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #00509d;
+      outline: none;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(0, 80, 157, 0.15);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 30px;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #003366, #00509d);
+      color: white;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 80, 157, 0.35);
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 26px;
+      }
+
+      .form-container {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>MPTC Customer Complaint Form</h1>
+      <p>Submit your toll, RFID, reload, or transaction concerns easily.</p>
+    </div>
+
+    <div class="form-container">
+
+      <h2 class="section-title">Customer Information</h2>
+
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DKa00000EKrFN"
+        method="POST">
+
+        <input type="hidden" name="orgid" value="00DKa00000EKrFN">
+        <input type="hidden" name="retURL" value="https://www.mptc.com.ph/">
+        <input type="hidden" id="external" name="external" value="1">
+
+        <div class="grid">
+
+          <!-- Contact Name -->
+          <div class="form-group">
+            <label for="name">Contact Name</label>
+            <input id="name" maxlength="80" name="name" type="text"
+              placeholder="Enter your full name" required />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input id="email" maxlength="80" name="email" type="email"
+              placeholder="Enter your email" required />
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" maxlength="40" name="phone" type="text"
+              placeholder="Enter your phone number" />
+          </div>
+
+          <!-- RFID -->
+          <div class="form-group">
+            <label for="00NKa00000rzzB9">RFID Number</label>
+            <input id="00NKa00000rzzB9" maxlength="255"
+              name="00NKa00000rzzB9" type="text"
+              placeholder="Enter RFID number" />
+          </div>
+
+          <!-- Plate Number -->
+          <div class="form-group">
+            <label for="00NKa00000rzzBE">Plate Number</label>
+            <input id="00NKa00000rzzBE" maxlength="255"
+              name="00NKa00000rzzBE" type="text"
+              placeholder="Enter plate number" />
+          </div>
+
+          <!-- Subject -->
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" maxlength="80" name="subject"
+              type="text" placeholder="Complaint subject" required />
+          </div>
+
+          <!-- Complaint Type -->
+          <div class="form-group">
+            <label for="00NKa00000rzzBx">Complaint Type</label>
+            <select id="00NKa00000rzzBx"
+              name="00NKa00000rzzBx" required>
+
+              <option value="">Select Complaint Type</option>
+              <option value="Charged Farthest Distance RFID">
+                Charged Farthest Distance RFID
+              </option>
+              <option value="Delayed Reload">Delayed Reload</option>
+              <option value="Uncredited Reload">Uncredited Reload</option>
+              <option value="Disputed Transaction">Disputed Transaction</option>
+              <option value="RFID Not Read">RFID Not Read</option>
+              <option value="Incorrect Toll Charge">
+                Incorrect Toll Charge
+              </option>
+              <option value="Double Charge">Double Charge</option>
+              <option value="Refund Request">Refund Request</option>
+              <option value="Lost Transit Ticket">
+                Lost Transit Ticket
+              </option>
+              <option value="Toll Barrier Issue">
+                Toll Barrier Issue
+              </option>
+            </select>
+          </div>
+
+          <!-- Toll Plaza -->
+          <div class="form-group">
+            <label for="00NKa00000rzzBO">Toll Plaza</label>
+            <select id="00NKa00000rzzBO"
+              name="00NKa00000rzzBO">
+
+              <option value="">Select Toll Plaza</option>
+              <option value="San Fernando SB">San Fernando SB</option>
+              <option value="San Fernando NB">San Fernando NB</option>
+              <option value="Mabiga NB">Mabiga NB</option>
+              <option value="Tambobong NB">Tambobong NB</option>
+              <option value="Balintawak">Balintawak</option>
+              <option value="Bocaue">Bocaue</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Angeles">Angeles</option>
+              <option value="San Simon">San Simon</option>
+              <option value="Mindanao Ave">Mindanao Ave</option>
+              <option value="C5 Link">C5 Link</option>
+              <option value="Calax Mamplasan">
+                Calax Mamplasan
+              </option>
+              <option value="CCLEX Main Toll">
+                CCLEX Main Toll
+              </option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Expressway -->
+          <div class="form-group">
+            <label for="00NKa00000rzzBT">Expressway</label>
+            <select id="00NKa00000rzzBT"
+              name="00NKa00000rzzBT">
+
+              <option value="">Select Expressway</option>
+              <option value="NLEX">NLEX</option>
+              <option value="SCTEX">SCTEX</option>
+              <option value="CAVITEX">CAVITEX</option>
+              <option value="CALAX">CALAX</option>
+              <option value="CCLEX">CCLEX</option>
+              <option value="NLEX Connector">
+                NLEX Connector
+              </option>
+            </select>
+          </div>
+
+          <!-- Merchant -->
+          <div class="form-group">
+            <label for="00NKa00000rzzC7">Merchant Used</label>
+            <select id="00NKa00000rzzC7"
+              name="00NKa00000rzzC7">
+
+              <option value="">Select Merchant</option>
+              <option value="BDO">BDO</option>
+              <option value="GCash">GCash</option>
+              <option value="Maya">Maya</option>
+              <option value="7-Eleven">7-Eleven</option>
+              <option value="Bayad Center">Bayad Center</option>
+              <option value="Online Banking">
+                Online Banking
+              </option>
+              <option value="None">None</option>
+            </select>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group full-width">
+            <label for="description">Complaint Description</label>
+            <textarea name="description" id="description"
+              placeholder="Please provide complete details about your concern..."
+              required></textarea>
+          </div>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Submit Complaint
+        </button>
+
+        <div class="footer-note">
+          © 2026 MPTC Customer Care Portal
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
